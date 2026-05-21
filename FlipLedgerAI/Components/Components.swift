@@ -121,7 +121,7 @@ struct SaleRecordCard: View {
                 Spacer()
                 Text(AppFormatters.currency(sale.finalProfit, code: currencyCode))
                     .font(.headline.weight(.bold))
-                    .foregroundStyle(sale.finalProfit >= 0 ? .flipGreen : .red)
+                    .foregroundStyle(sale.finalProfit >= 0 ? Color.flipGreen : Color.red)
             }
 
             HStack {
@@ -150,7 +150,7 @@ struct MarketplaceBadge: View {
             .padding(.horizontal, 10)
             .padding(.vertical, 6)
             .background(.green.opacity(0.12), in: Capsule())
-            .foregroundStyle(.flipGreen)
+            .foregroundStyle(Color.flipGreen)
     }
 }
 
@@ -212,7 +212,7 @@ struct ListingDraftView: View {
 
             Text(suggestedPriceRange)
                 .font(.subheadline.weight(.semibold))
-                .foregroundStyle(.flipGreen)
+                .foregroundStyle(Color.flipGreen)
 
             if !sellingTips.isEmpty {
                 VStack(alignment: .leading, spacing: 8) {
@@ -258,7 +258,7 @@ struct PricingSuggestionCard: View {
 
             Label(suggestion.profitWarning, systemImage: "exclamationmark.triangle")
                 .font(.footnote)
-                .foregroundStyle(.flipWarning)
+                .foregroundStyle(Color.flipWarning)
 
             Text(suggestion.confidence)
                 .font(.caption)
@@ -397,7 +397,7 @@ struct UpgradeBanner: View {
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
             Image(systemName: "sparkles")
-                .foregroundStyle(.flipGreen)
+                .foregroundStyle(Color.flipGreen)
                 .frame(width: 30, height: 30)
                 .background(Color.flipGreen.opacity(0.12), in: RoundedRectangle(cornerRadius: 8))
 

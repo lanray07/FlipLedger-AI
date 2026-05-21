@@ -103,7 +103,7 @@ struct DashboardView: View {
                 value: AppFormatters.currency(metrics.totalProfit, code: currencyCode),
                 subtitle: "After tracked costs",
                 systemImage: "arrow.up.right.circle",
-                tint: metrics.totalProfit >= 0 ? .flipGreen : .red
+                tint: metrics.totalProfit >= 0 ? Color.flipGreen : Color.red
             )
             ProfitSummaryCard(
                 title: "Unsold value",
@@ -157,7 +157,7 @@ struct DashboardView: View {
         } label: {
             HStack {
                 Image(systemName: icon)
-                    .foregroundStyle(.flipGreen)
+                    .foregroundStyle(Color.flipGreen)
                 Text(title)
                     .font(.subheadline.weight(.semibold))
                     .lineLimit(1)

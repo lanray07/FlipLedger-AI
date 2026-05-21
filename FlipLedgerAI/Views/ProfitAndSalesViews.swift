@@ -46,7 +46,7 @@ struct ProfitCalculatorView: View {
             Spacer()
             Text(value)
                 .fontWeight(.semibold)
-                .foregroundStyle(isProfit && viewModel.result.netProfit < 0 ? .red : .primary)
+                .foregroundStyle(isProfit && viewModel.result.netProfit < 0 ? Color.red : Color.primary)
         }
     }
 }
@@ -167,7 +167,7 @@ struct RecordSaleView: View {
                     Spacer()
                     Text(AppFormatters.currency(viewModel.finalProfit(for: selectedItem), code: currencyCode))
                         .font(.headline)
-                        .foregroundStyle(viewModel.finalProfit(for: selectedItem) >= 0 ? .flipGreen : .red)
+                        .foregroundStyle(viewModel.finalProfit(for: selectedItem) >= 0 ? Color.flipGreen : Color.red)
                 }
                 Text(DisclaimerText.short)
                     .font(.footnote)

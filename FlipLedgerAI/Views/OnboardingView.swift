@@ -13,7 +13,7 @@ struct OnboardingView: View {
                     VStack(alignment: .leading, spacing: 10) {
                         Image(systemName: "chart.line.uptrend.xyaxis")
                             .font(.system(size: 42, weight: .semibold))
-                            .foregroundStyle(.flipGreen)
+                            .foregroundStyle(Color.flipGreen)
                             .frame(width: 64, height: 64)
                             .background(Color.flipGreen.opacity(0.12), in: RoundedRectangle(cornerRadius: 8))
 

@@ -284,7 +284,7 @@ struct InventoryDetailView: View {
                     .padding(.horizontal, 10)
                     .padding(.vertical, 6)
                     .background(Color.flipGreen.opacity(0.12), in: Capsule())
-                    .foregroundStyle(.flipGreen)
+                    .foregroundStyle(Color.flipGreen)
             }
         }
         .padding()
@@ -296,7 +296,7 @@ struct InventoryDetailView: View {
         LazyVGrid(columns: [GridItem(.adaptive(minimum: 150), spacing: 12)], spacing: 12) {
             ProfitSummaryCard(title: "Purchase price", value: AppFormatters.currency(item.purchasePrice, code: currencyCode), subtitle: item.purchaseSource, systemImage: "cart")
             ProfitSummaryCard(title: "Target price", value: AppFormatters.currency(item.targetSellingPrice, code: currencyCode), subtitle: "Before fees", systemImage: "tag", tint: .blue)
-            ProfitSummaryCard(title: "Estimated gross", value: AppFormatters.currency(item.estimatedGrossProfit, code: currencyCode), subtitle: "Before selling costs", systemImage: "arrow.up.right", tint: item.estimatedGrossProfit >= 0 ? .flipGreen : .red)
+            ProfitSummaryCard(title: "Estimated gross", value: AppFormatters.currency(item.estimatedGrossProfit, code: currencyCode), subtitle: "Before selling costs", systemImage: "arrow.up.right", tint: item.estimatedGrossProfit >= 0 ? Color.flipGreen : Color.red)
         }
     }
 

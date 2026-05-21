@@ -435,7 +435,7 @@ struct InventoryScannerView: View {
                 if let savedMessage {
                     Text(savedMessage)
                         .font(.footnote)
-                        .foregroundStyle(.flipGreen)
+                        .foregroundStyle(Color.flipGreen)
                 }
 
                 DisclaimerBox()
