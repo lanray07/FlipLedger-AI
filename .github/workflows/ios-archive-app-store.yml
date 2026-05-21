@@ -14,6 +14,7 @@ jobs:
     runs-on: macos-latest
 
     env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
       PROJECT_PATH: FlipLedgerAI.xcodeproj
       SCHEME: FlipLedgerAI
       BUNDLE_ID: com.flipledgerai.app
@@ -79,6 +80,7 @@ jobs:
         run: |
           set -o pipefail
           xcodebuild \
+            -quiet \
             -project "$PROJECT_PATH" \
             -scheme "$SCHEME" \
             -configuration Release \
@@ -91,6 +93,7 @@ jobs:
         run: |
           set -o pipefail
           xcodebuild \
+            -quiet \
             -exportArchive \
             -archivePath "$ARCHIVE_PATH" \
             -exportOptionsPlist ci/ExportOptions.plist \
