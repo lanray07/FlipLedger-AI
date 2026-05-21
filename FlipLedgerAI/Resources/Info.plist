@@ -24,6 +24,8 @@
 	<string>FlipLedger AI uses the camera to capture item photos for inventory and listing drafts.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>FlipLedger AI uses selected photos to attach item images and create listing drafts.</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
