@@ -23,3 +23,12 @@ FlipLedger AI is a SwiftUI + SwiftData iOS app for reseller profit tracking acro
 - Configure real App Store Connect subscription products for the StoreKit product IDs.
 - Add final app icons to `FlipLedgerAI/Resources/Assets.xcassets/AppIcon.appiconset`.
 - Verify current marketplace fees and legal/tax wording before shipping.
+
+## GitHub Xcode Workflows
+
+The repo includes GitHub Actions workflows for Xcode:
+
+- `iOS Build` validates the Xcode project on a macOS runner.
+- `iOS Archive and App Store Upload` creates an IPA and can upload to App Store Connect after Apple signing secrets are added.
+
+Setup notes are in `ci/GITHUB_XCODE_SETUP.md`.
