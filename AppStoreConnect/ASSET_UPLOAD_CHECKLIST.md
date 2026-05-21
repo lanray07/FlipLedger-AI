@@ -13,6 +13,21 @@ Use the Xcode asset catalog icon in the app build. The App Store icon is deliver
 
 ### iPhone Screenshots
 
+Device well currently shown in App Store Connect: iPhone 6.5" Display  
+Size: 1242 x 2688 px  
+Format: PNG  
+Path: `AppStoreConnect/Assets/iPhone-6.5/`
+
+Files:
+
+- `01-dashboard.png`
+- `02-inventory.png`
+- `03-profit-calculator.png`
+- `04-ai-listing.png`
+- `05-analytics.png`
+
+Additional generated size:
+
 Device well: iPhone 6.9" Display  
 Size: 1320 x 2868 px  
 Format: PNG  
@@ -55,7 +70,7 @@ Upload this same screenshot in each subscription product's Review Information se
 
 1. Sign in to App Store Connect.
 2. Open `My Apps` > `FlipLedger AI` > iOS version `1.0.0`.
-3. In App Previews and Screenshots, upload the five iPhone PNG files to the iPhone 6.9" screenshot well.
+3. In App Previews and Screenshots, upload the five PNG files from `AppStoreConnect/Assets/iPhone-6.5/` to the iPhone screenshot well currently shown by App Store Connect.
 4. Upload the five iPad PNG files to the iPad 13" screenshot well.
 5. Upload a build from Xcode that includes the generated app icon asset catalog.
 6. Add `AppStoreConnect/Assets/SubscriptionReview/paywall-review.png` to each subscription product's Review Information section.
