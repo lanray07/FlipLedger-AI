@@ -7,8 +7,9 @@ This document contains the App Store Connect form values that can be pasted into
 ## Current Blockers Before App Review
 
 - Upload a real Xcode archive from macOS.
-- Add final app icon artwork to `FlipLedgerAI/Resources/Assets.xcassets/AppIcon.appiconset`.
-- Create iPhone and iPad screenshots.
+- Use the generated app icon at `FlipLedgerAI/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon-1024.png`, or replace it with final brand artwork.
+- Upload generated screenshots from `AppStoreConnect/Assets/iPhone-6.9/` and `AppStoreConnect/Assets/iPad-13/`.
+- Upload the subscription review screenshot from `AppStoreConnect/Assets/SubscriptionReview/paywall-review.png` to each in-app purchase product.
 - Confirm the bundle identifier in Apple Developer Certificates, Identifiers & Profiles.
 - Confirm export compliance answers with the Account Holder.
 - Replace placeholder URLs with a production website if you do not want to use GitHub public pages.
