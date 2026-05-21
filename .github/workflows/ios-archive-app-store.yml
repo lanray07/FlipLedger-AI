@@ -7,6 +7,10 @@ on:
         description: Upload exported IPA to App Store Connect
         type: boolean
         default: false
+  push:
+    tags:
+      - 'appstore-archive-*'
+      - 'appstore-upload-*'
 
 jobs:
   archive:
@@ -107,7 +111,7 @@ jobs:
           if-no-files-found: error
 
       - name: Validate App Store Connect upload secrets
-        if: ${{ inputs.upload_to_app_store }}
+        if: ${{ inputs.upload_to_app_store || startsWith(github.ref, 'refs/tags/appstore-upload-') }}
         run: |
           missing=0
           for name in APP_STORE_CONNECT_API_KEY_ID APP_STORE_CONNECT_ISSUER_ID APP_STORE_CONNECT_API_PRIVATE_KEY_BASE64; do
@@ -123,7 +127,7 @@ jobs:
           APP_STORE_CONNECT_API_PRIVATE_KEY_BASE64: ${{ secrets.APP_STORE_CONNECT_API_PRIVATE_KEY_BASE64 }}
 
       - name: Upload to App Store Connect
-        if: ${{ inputs.upload_to_app_store }}
+        if: ${{ inputs.upload_to_app_store || startsWith(github.ref, 'refs/tags/appstore-upload-') }}
         env:
           APP_STORE_CONNECT_API_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ID }}
           APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
