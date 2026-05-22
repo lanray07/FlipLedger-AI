@@ -3,7 +3,7 @@
 This repo has two GitHub Actions workflows:
 
 - `.github/workflows/ios-build.yml`: builds FlipLedger AI on a GitHub macOS runner without Apple signing secrets.
-- `.github/workflows/ios-archive-app-store.yml`: manually archives, exports an IPA, and can upload to App Store Connect when signing secrets are configured.
+- `.github/workflows/ios-archive-app-store.yml`: manually archives, exports an IPA, and can upload to App Store Connect using Xcode automatic signing with an App Store Connect API key.
 
 ## Build Check
 
@@ -29,31 +29,27 @@ xcodebuild \
 
 Add these repository secrets in GitHub under `Settings > Secrets and variables > Actions`.
 
-Required for archive/export:
-
-- `APPLE_TEAM_ID`
-- `BUILD_CERTIFICATE_BASE64`
-- `P12_PASSWORD`
-- `BUILD_PROVISION_PROFILE_BASE64`
-- `KEYCHAIN_PASSWORD` optional
-
-Required only if `upload_to_app_store` is enabled:
+Required for archive/export/upload:
 
 - `APP_STORE_CONNECT_API_KEY_ID`
 - `APP_STORE_CONNECT_ISSUER_ID`
 - `APP_STORE_CONNECT_API_PRIVATE_KEY_BASE64`
 
-## How To Encode Signing Files
+Optional override:
+
+- `APPLE_TEAM_ID` defaults to `5ZP6GV85J6` in the workflow/project.
+
+The workflow uses `xcodebuild -allowProvisioningUpdates` so Xcode can create or update signing assets during CI. You do not need to upload a `.p12` certificate or provisioning profile as GitHub secrets.
+
+## How To Encode The API Key
 
 On macOS:
 
 ```sh
-base64 -i distribution_certificate.p12 | pbcopy
-base64 -i AppStore_com.flipledgerai.app.mobileprovision | pbcopy
 base64 -i AuthKey_XXXXXXXXXX.p8 | pbcopy
 ```
 
-Paste each copied value into the matching GitHub secret.
+Paste the copied value into `APP_STORE_CONNECT_API_PRIVATE_KEY_BASE64`.
 
 ## Manual App Store Upload
 
