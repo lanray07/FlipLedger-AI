@@ -1,6 +1,6 @@
 # GitHub Xcode Setup
 
-This repo has two GitHub Actions workflows:
+This repo has two GitHub Actions workflows. Both run on GitHub's `macos-26` image so App Store archives are built with Xcode 26 and the iOS 26 SDK required by App Store Connect.
 
 - `.github/workflows/ios-build.yml`: builds FlipLedger AI on a GitHub macOS runner without Apple signing secrets.
 - `.github/workflows/ios-archive-app-store.yml`: manually archives, exports an IPA, and can upload to App Store Connect using explicit App Store distribution signing.
